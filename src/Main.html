@@ -6,6 +6,8 @@
     <style>
         body {
         margin: 0;
+        }
+        .panels{
         display: flex;
         }
 
@@ -13,17 +15,37 @@
         background: cyan;
         flex: 4;
         height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
         }
         .right{
         background:orange;
         height: 100vh;
         flex: 3;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        color: white;
+        font-size:32px;
+        text-align: center;
+        padding: 21px;
+        }
+        h1 {
+        margin: 0;
+        padding: 12px 20px;
+        background: #222;
+        color: white;
+        font-size: 20px;
         }
        </style>
 </head>
 <body>
     <h1>EcoTray</h1>
-    <div class = "left">LEFT</div>
-    <div class = "right">RIGHT</div>
+    <div class = "panels">
+        <div class = "left">Camera</div>
+        <div class = "right">Please throw plastics into blue can.</div>
+    </div>
 </body>
 </html>
