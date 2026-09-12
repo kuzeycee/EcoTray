@@ -6,12 +6,24 @@
     <style>
         body {
         margin: 0;
+        display: flex;
+        }
+
+        .left {
+        background: cyan;
+        flex: 4;
+        height: 100vh;
+        }
+        .right{
+        background:orange;
+        height: 100vh;
+        flex: 3;
         }
        </style>
 </head>
 <body>
     <h1>EcoTray</h1>
-    <div>LEFT</div>
-    <div>RIGHT</div>
+    <div class = "left">LEFT</div>
+    <div class = "right">RIGHT</div>
 </body>
 </html>
