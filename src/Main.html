@@ -50,6 +50,22 @@
         <div class = "right">Please throw plastics into blue can.</div>
     </div>
 <script>
+    let model = null;
+    const modelURL = "./model/model.json";
+    const metadataURL = "./model/metadata.json";
+    async function loadModel()
+    {
+        try
+        {
+            model = await tmImage.load(modelURL, metadataURL);
+            console.log("Model has been uploaded");
+        }
+        catch(err)
+        {
+            console.log("Model cannot be uploaded yet: " + err.message);
+        }
+    }
+    loadModel();
     const camBox = document.querySelector(".left");
 
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -67,7 +83,7 @@
     })
     .catch(function(err)
     {
-        camBox.textContent = "Camera cannot be opened: " + err.name;
+        camBox.textContent = "Camera cannot be uploaded yet: " + err.name;
     });
 </script>
 </body>
