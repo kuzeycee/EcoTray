@@ -48,10 +48,24 @@
         <div class = "right">Please throw plastics into blue can.</div>
     </div>
 <script>
-    console.log("JavaScript is working!! yay");
-    document.querySelector(".left").textContent = "cam will open in here.";
-    document.querySelector(".right").addEventListener("click", function() {
-    document.querySelector( ".right").textContent = "Thanks! Now plate is clear like your heart :))"
+    const camBox = document.querySelector(".left");
+
+    navigator.mediaDevices.getUserMedia({video: true, audio: false})
+    .then(function(stream)
+    {
+    const video = document.createElement("video");
+    video.srcObject = stream;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.muted = true;
+
+    camBox.textContent = "";
+    camBox.appendChild(video);
+
+    })
+    .catch(function(err)
+    {
+        camBox.textContent = "Camera cannot be opened: " + err.name;
     });
 </script>
 </body>
